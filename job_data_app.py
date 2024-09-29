@@ -8,6 +8,7 @@ st.set_page_config(layout="wide", page_title="Job Dashboard", page_icon="📊")
 
 # Load the data
 df = pd.read_parquet('job_data.parquet')
+df.to_sql('job_data', 'sqlite:///job_data.db', if_exists='replace')
 # Custom CSS for centering and aesthetics
 st.markdown(
     """
